@@ -18,12 +18,17 @@ class _ToggleScreenState extends State<ToggleScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(isOn ? "Switch is ON" : "Switch is OFF",
-                style: const TextStyle(fontSize: 24)),
+            Text(
+              isOn ? "Switch is ON" : "Switch is OFF",
+              style: const TextStyle(fontSize: 24),
+            ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Practice setState to toggle isOn
+                setState(() {
+                  isOn = !isOn;
+                });
               },
               child: const Text("Toggle"),
             ),

@@ -33,6 +33,9 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   ),
                   onPressed: () {
                     // Practice setState here to toggle isObscure
+                    setState(() {
+                      isObscure = !isObscure;
+                    });
                   },
                 ),
               ),
@@ -41,6 +44,9 @@ class _PasswordScreenState extends State<PasswordScreen> {
             ElevatedButton(
               onPressed: () {
                 // Practice setState here to reset isObscure = true
+                setState(() {
+                  isObscure = true;
+                });
               },
               child: const Text("Reset to Hidden"),
             ),
