@@ -8,7 +8,6 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
-
   int counter = 0;
 
   @override
@@ -28,21 +27,30 @@ class _CounterScreenState extends State<CounterScreen> {
             ),
             Text(
               "$counter",
-              style: const TextStyle(fontSize: 40, color: Colors.blue),
+              style: const TextStyle(fontSize: 50, color: Colors.blue),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  counter++;
+                });
               },
               child: const Text("Increase"),
             ),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  counter--;
+                });
               },
               child: const Text("Decrease"),
             ),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  counter = 0;
+                });
               },
               child: const Text("Reset"),
             ),

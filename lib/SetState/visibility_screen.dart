@@ -18,13 +18,19 @@ class _VisibilityScreenState extends State<VisibilityScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (isVisible)
-              const Text("Now you see me!",
-                  style: TextStyle(fontSize: 24, color: Colors.blue)),
+            isVisible
+                ? Text(
+                    "Now you see me!",
+                    style: TextStyle(fontSize: 24, color: Colors.blue),
+                  )
+                : Text("", style: TextStyle(fontSize: 24, color: Colors.blue)),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Practice setState to toggle isVisible
+                setState(() {
+                  isVisible = !isVisible;
+                });
               },
               child: const Text("Toggle Visibility"),
             ),

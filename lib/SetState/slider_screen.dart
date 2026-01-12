@@ -8,7 +8,7 @@ class SliderScreen extends StatefulWidget {
 }
 
 class _SliderScreenState extends State<SliderScreen> {
-  double sliderValue = 0.0;
+  double _sliderValue = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +19,18 @@ class _SliderScreenState extends State<SliderScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Slider(
-              value: sliderValue,
+              value: _sliderValue,
               min: 0,
               max: 100,
               divisions: 10,
               onChanged: (value) {
                 // Practice setState to update sliderValue
+                setState(() {
+                  _sliderValue = value;
+                });
               },
             ),
-            Text(
-              "Value: $sliderValue",
-              style: const TextStyle(fontSize: 24),
-            ),
+            Text("Value: $_sliderValue", style: const TextStyle(fontSize: 24)),
           ],
         ),
       ),

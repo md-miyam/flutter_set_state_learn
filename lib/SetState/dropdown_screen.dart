@@ -31,10 +31,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Dropdown Practice"),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text("Dropdown Practice"), centerTitle: true),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -43,13 +40,12 @@ class _DropdownScreenState extends State<DropdownScreen> {
               hint: const Text("Select a food"),
               value: selectedFood,
               items: foods.map((food) {
-                return DropdownMenuItem<String>(
-                  value: food,
-                  child: Text(food),
-                );
+                return DropdownMenuItem<String>(value: food, child: Text(food));
               }).toList(),
               onChanged: (value) {
-                // Practice setState here to update selectedFood
+                setState(() {
+                  selectedFood = value;
+                });
               },
             ),
             const SizedBox(height: 20),
